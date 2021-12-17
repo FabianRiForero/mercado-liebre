@@ -48,6 +48,11 @@ p {
   font-size: var(--text-sm);
 }
 
+div.top-header, nav.nav,section.banner, main, footer.footer{
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
 /* ---------------------------- CABECERA ---------------------------- */
 
 div.top-header{
@@ -69,6 +74,9 @@ header{
 header picture.logo,
 header .form{
   width: 50%;
+}
+header picture.logo img{
+  max-height: 60px;
 }
 
 header picture.logo{
@@ -99,18 +107,25 @@ header ul li a{
 
 header .form .input{
   background-color: #FFF;
-  border: 1px solid #000;
+  border: none;
   outline: none;
   color: #666;
-  padding: 2px;
+  padding: 6px 12px;
   width: 100%;
+  border-radius: 5px 0 0 5px;
 }
 
 header .form .submit{
   background-color: #FFF;
-  border: 1px solid #000;
+  border-radius: 0 5px 5px 0;
+  border: none;
+  border-left: 1px solid var(--gris-claro);
+  cursor: pointer;
   color: #666;
-  width: 10%;
+  width: 20%;
+  padding: 7px;
+  display: flex;
+  justify-content: center;
 }
 
 div.burger-menu{
@@ -171,6 +186,7 @@ section.banner img{
 main{
   width: 90%;
   margin: 0 auto;
+  padding: 10px 0;
 }
 
 main section article{
@@ -253,17 +269,28 @@ main .form-login .block input,
 main .form-register .campo input{
   padding: 6px 12px;
 }
+main .form-register .campo input[type=date]{
+  width: 100%;
+}
 
 main .form-register .button{
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 20px;
   width: 100%;
 }
 
 main .form-register .button button{
   width: 100%;
-  padding: 6px 12px;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--celeste);
+  color: var(--blanco);
+  cursor: pointer;
+}
+main .form-register .button button:hover{
+  background-color: var(--azul);
 }
 
 main .form-login .block{
@@ -363,6 +390,9 @@ main .form-login .button button:hover{
     align-items: center;
     padding: 10px;
   }
+  header div.top-header p{
+    width: 50%;
+  }
   main section div.products article{
     width: 22%;
   }
@@ -385,9 +415,6 @@ main .form-login .button button:hover{
   main .form-register .button{
     flex-direction: row;
     justify-content: space-around;
-  }
-  main .form-register .button button{
-    width: auto;
   }
   /* ---------------------------- FOOTER ---------------------------- */
   footer.footer{
